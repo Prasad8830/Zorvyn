@@ -108,7 +108,14 @@ Strict permission enforcement using FastAPI dependencies:
 - Python 3.10+
 - Docker (for PostgreSQL database)
 
-### 2. Setup Database
+### 2. Configure Environment
+Before doing anything, create your local environment variables file by copying the provided example:
+```bash
+cp .env.example .env
+```
+*(You may review and adjust the variables inside `.env` if you have different configurations).*
+
+### 3. Setup Database
 Spin up a local PostgreSQL instance using Docker mapped to port `5434` (to avoid conflicts):
 ```bash
 docker run --name zorvyn-finance-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=finance_db -p 5434:5432 -d postgres:15
